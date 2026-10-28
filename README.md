@@ -4,7 +4,7 @@
   </a>
   <h1>prayushdesai.com</h1>
   <p>
-    Source for my personal site. Hand-written HTML and CSS, no framework,<br>
+    Source for my personal site. A single page of hand-written HTML and CSS,<br>
     hosted on <a href="https://pages.github.com">GitHub Pages</a>.
   </p>
   <p>
@@ -15,10 +15,7 @@
 <br>
 
 <a href="https://prayushdesai.com">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/preview-dark.png">
-    <img alt="Screenshot of prayushdesai.com" src="assets/preview-light.png">
-  </picture>
+  <img alt="Screenshot of prayushdesai.com" src="assets/preview.png">
 </a>
 
 ## Status
@@ -27,8 +24,9 @@ The full version — projects, write-ups and a résumé — is in progress. For 
 
 ## Stack
 
-- **Markup & styles:** plain HTML and CSS in a single file, nothing to build
-- **Type:** [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif), [Inter Tight](https://fonts.google.com/specimen/Inter+Tight) and [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono)
+- **Markup & styles:** plain HTML and CSS, no JavaScript, nothing to build
+- **Type:** [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif) and [Inter Tight](https://fonts.google.com/specimen/Inter+Tight)
+- **Palette:** one warm paper tone, near-black ink, and UW red for hover states
 - **Hosting:** GitHub Pages
 - **Domain & DNS:** Cloudflare
 
@@ -36,10 +34,10 @@ The full version — projects, write-ups and a résumé — is in progress. For 
 
 ```
 .
-├── index.html      # the whole homepage: markup, styles and the clock script
+├── index.html      # the whole homepage: markup and styles
 ├── 404.html        # served by GitHub Pages for unknown paths
 ├── favicon.svg
-├── assets/         # social preview image and README screenshots
+├── assets/         # social preview image and README screenshot
 ├── robots.txt
 ├── sitemap.xml
 └── CNAME           # points GitHub Pages at prayushdesai.com
