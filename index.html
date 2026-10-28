@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prayush Desai</title>
+<meta name="description" content="Prayush Desai — Computer Science student at UW–Madison. Projects, experience, and resume.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf9; --surface: #ffffff; --text: #1c1917; --muted: #57534e;
+    --line: #e7e5e4; --accent: #c5050c; --accent-soft: #fdecec; --chip: #f5f5f4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0c0a09; --surface: #1c1917; --text: #f5f5f4; --muted: #a8a29e;
+      --line: #292524; --accent: #f87171; --accent-soft: #3a1414; --chip: #292524;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font: 16px/1.6 Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+  nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  nav .logo { font-weight: 700; text-decoration: none; }
+  nav ul { display: flex; gap: 20px; list-style: none; font-size: 14px; }
+  nav ul a { text-decoration: none; color: var(--muted); }
+  nav ul a:hover { color: var(--text); }
+
+  header { padding: 88px 0 56px; }
+  .eyebrow { font-family: "JetBrains Mono", monospace; font-size: 13px; color: var(--accent); margin-bottom: 14px; }
+  h1 { font-size: clamp(36px, 7vw, 52px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 18px; }
+  .lede { font-size: 18px; color: var(--muted); max-width: 560px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; border: 1px solid var(--line); background: var(--surface); }
+  .btn:hover { border-color: var(--muted); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn svg { width: 16px; height: 16px; }
+
+  section { padding: 48px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 13px; font-family: "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 500; margin-bottom: 24px; }
+
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px; margin-bottom: 14px; }
+  .card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .card h3 { font-size: 18px; }
+  .meta { font-size: 13px; color: var(--muted); font-family: "JetBrains Mono", monospace; }
+  .sub { color: var(--muted); font-size: 14px; margin-bottom: 10px; }
+  .card ul { padding-left: 18px; color: var(--muted); font-size: 15px; }
+  .card li + li { margin-top: 4px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .tag { font-size: 12px; font-family: "JetBrains Mono", monospace; padding: 3px 8px; border-radius: 6px; background: var(--chip); color: var(--muted); }
+  .featured { border-color: var(--accent); }
+  .badge { font-size: 11px; font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: 2px 8px; border-radius: 99px; margin-left: 8px; vertical-align: middle; }
+
+  .timeline .item { display: grid; grid-template-columns: 140px 1fr; gap: 16px; padding: 14px 0; }
+  .timeline .item + .item { border-top: 1px dashed var(--line); }
+  .timeline h3 { font-size: 16px; }
+  .timeline p { color: var(--muted); font-size: 15px; }
+
+  .skills { display: grid; gap: 14px; }
+  .skills div { display: grid; grid-template-columns: 140px 1fr; gap: 16px; }
+  .skills dt { font-weight: 600; font-size: 14px; }
+
+  .honors li { list-style: none; padding: 8px 0; color: var(--muted); font-size: 15px; }
+  .honors b { color: var(--text); font-weight: 600; }
+
+  footer { padding: 48px 0 64px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  footer .links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 10px; }
+
+  @media (max-width: 600px) {
+    nav ul { gap: 14px; font-size: 13px; }
+    nav ul li.hide-sm { display: none; }
+    .timeline .item, .skills div { grid-template-columns: 1fr; gap: 2px; }
+    header { padding: 56px 0 40px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#">PD</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li class="hide-sm"><a href="#skills">Skills</a></li>
+      <li><a href="resume.pdf">Resume</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+  <header>
+    <p class="eyebrow">// hi, I'm</p>
+    <h1>Prayush Desai</h1>
+    <p class="lede">Computer Science student at the University of Wisconsin–Madison. I build practical tools in Python and Java, from a schedule generator for students to data-structure-backed apps.</p>
+    <div class="cta">
+      <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>Resume</a>
+      <a class="btn" href="https://github.com/prayush27" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0023.5 12C23.5 5.7 18.3.5 12 .5z"/></svg>GitHub</a>
+      <a class="btn" href="https://linkedin.com/in/prayushdesai" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 110-4.2 2.1 2.1 0 010 4.2zM7.1 20.5H3.6V9h3.5v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>LinkedIn</a>
+      <a class="btn" href="mailto:pdesai25@wisc.edu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a>
+    </div>
+  </header>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <article class="card featured">
+      <div class="card-head"><h3>Smart Scheduler <span class="badge">Featured</span></h3><span class="meta">May 2026 – Present</span></div>
+      <p class="sub">A Flask web app that turns a student's course list into every conflict-free weekly schedule, ranked.</p>
+      <ul>
+        <li>Pairs each lecture with its linked discussions and takes the Cartesian product across courses, filtering with pairwise day-and-time overlap checks.</li>
+        <li>6-factor scoring function ranks schedules on credit load, day spread, early and evening classes, and gaps, flagging loads over 18 credits.</li>
+        <li>scikit-learn linear regression, trained on a hand-built dataset, predicts course workload from credits and weekly meeting hours.</li>
+      </ul>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">scikit-learn</span><span class="tag">NumPy</span><span class="tag">Jinja2</span></div>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><h3>Game Records Leaderboard</h3><span class="meta">Fall 2026</span></div>
+      <p class="sub">CS 400 team project · backend developer</p>
+      <ul>
+        <li>Backend that loads 600 player records from CSV into a sorted tree and answers score-range queries, completion-time filters, and top-10 lookups.</li>
+        <li>Maps CSV columns by header name and skips malformed rows, so reordered or extra columns still load.</li>
+        <li>JUnit 5 tests against a placeholder tree verified backend logic before the full tree was ready.</li>
+      </ul>
+      <div class="tags"><span class="tag">Java</span><span class="tag">JUnit 5</span></div>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><h3>Red-Black Tree</h3><span class="meta">Fall 2026</span></div>
+      <p class="sub">CS 400 coursework</p>
+      <ul>
+        <li>Generic red-black tree built on my own BST, rebalancing inserts with recoloring and rotations.</li>
+        <li>Tests for every insert-repair case: red-uncle recolor, zig-zag, and straight-line.</li>
+      </ul>
+      <div class="tags"><span class="tag">Java</span><span class="tag">JUnit 5</span></div>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><h3>Version Control System</h3><span class="meta">Spring 2026</span></div>
+      <p class="sub">CS 300 coursework</p>
+      <ul>
+        <li>Simplified version control modeling repositories, branches, commits, and history.</li>
+        <li>CommitStack and Queue written from scratch, with no Java collections.</li>
+      </ul>
+      <div class="tags"><span class="tag">Java</span></div>
+    </article>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="item">
+        <span class="meta">Aug 2026 – Now</span>
+        <div><h3>RecWell Operations Attendant</h3><p>Bakke Recreation &amp; Wellbeing, UW–Madison. Facility operations for ~4,000 daily check-ins.</p></div>
+      </div>
+      <div class="item">
+        <span class="meta">2025 – 2026</span>
+        <div><h3>Barista</h3><p>Bean &amp; Creamery, UW–Madison. Led shifts and trained 4+ new baristas; served 100–150 customers per shift.</p></div>
+      </div>
+      <div class="item">
+        <span class="meta">May 2024</span>
+        <div><h3>IT Department Intern</h3><p>1Rivet, Gujarat, India. UI/UX design, project planning, and full-stack work with Java, C++, and web frameworks.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card">
+      <div class="card-head"><h3>University of Wisconsin–Madison</h3><span class="meta">Expected May 2029</span></div>
+      <p class="sub">B.S. Computer Science · GPA 3.58</p>
+      <p class="sub" style="margin:0">Coursework: Data Structures &amp; OOP in Java, Calculus I &amp; II, Programming III, Discrete Mathematics, Intro to Computer Engineering, Data Science Modeling I</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <dl class="skills">
+      <div><dt>Languages</dt><dd class="tags" style="margin:0"><span class="tag">Python</span><span class="tag">Java</span><span class="tag">HTML</span></dd></div>
+      <div><dt>Frameworks</dt><dd class="tags" style="margin:0"><span class="tag">Flask</span><span class="tag">scikit-learn</span><span class="tag">NumPy</span><span class="tag">Jinja2</span></dd></div>
+      <div><dt>Tools</dt><dd class="tags" style="margin:0"><span class="tag">Git</span><span class="tag">JUnit 5</span><span class="tag">VS Code</span><span class="tag">IntelliJ IDEA</span></dd></div>
+    </dl>
+  </section>
+
+  <section id="leadership">
+    <h2>Leadership &amp; Awards</h2>
+    <ul class="honors">
+      <li><b>Head Boy, Atul Vidyalaya:</b> elected by student-teacher vote and principal interview to lead ~1,400 students</li>
+      <li><b>Co-founder &amp; President, Social Welfare Club:</b> raised $1,000 in one week for underprivileged students</li>
+      <li><b>Waterloo contests:</b> 1st, Newton Physics · 2nd, Avogadro Chemistry · Math Olympiad Rank 2</li>
+      <li><b>Athletics:</b> school soccer captain (Gujarat champions, 4th at CISCE nationals) · national badminton (2x)</li>
+      <li><b>Activities:</b> Google Developer Student Club · Badminton Club, UW–Madison</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Let's talk: <a href="mailto:pdesai25@wisc.edu">pdesai25@wisc.edu</a></p>
+    <div class="links">
+      <a href="https://github.com/prayush27">GitHub</a>
+      <a href="https://linkedin.com/in/prayushdesai">LinkedIn</a>
+      <a href="resume.pdf">Resume (PDF)</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
